@@ -22,7 +22,7 @@ function generateRoutes  ($controller)
     try {
         $controller_class = new ReflectionClass('App\Http\Controllers'.'\\'.$controller);
     } catch (ReflectionException $e) {
-        if(config('lazy_router.error_flash'))
+        if(config('lazy_config.error_flash'))
             $console->writeln("Lazy Routing: ".$e->getMessage().". May be $controller in not in main controller folder. \n");
         return;
     }
@@ -31,7 +31,7 @@ function generateRoutes  ($controller)
 
     if(!isset($calss_config['LAZY_CONFIG']['url_path']))
     {
-        if(config('lazy_router.error_flash'))
+        if(config('lazy_config.error_flash'))
             $console->writeln("Lazy Routing: const LAZY_CONFIG or url_path value not found in $controller. Lazy Routing will not work in the $controller.\n");
         return;
     }
@@ -100,8 +100,8 @@ function generateRoutes  ($controller)
 
     });
 
-    if(config('lazy_router.error_flash'))
-        $console->writeln("Lazy Routing: You can disable in config/lazy_config.pho. \n");
+    if(config('lazy_config.error_flash'))
+        $console->writeln("Lazy Routing: You can disable the error flash in config/lazy_config.php. \n");
 }
 
 
