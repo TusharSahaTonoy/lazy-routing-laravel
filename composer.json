@@ -1,0 +1,26 @@
+{
+    "name": "tushar/lazy-routing",
+    "description": "The test pack",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tonoysh",
+            "email": "tonoysh@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tushar\\LazyRouting\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tushar\\LazyRouting\\LazyServiceProvider"
+            ]
+        }
+    }
+}
