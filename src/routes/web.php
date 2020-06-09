@@ -18,12 +18,13 @@ function generateRoutes  ($controller)
 {
     
     $console = new \Symfony\Component\Console\Output\ConsoleOutput();
-
+    $issue = false;
     try {
         $controller_class = new ReflectionClass('App\Http\Controllers'.'\\'.$controller);
     } catch (ReflectionException $e) {
         if(config('lazy_config.error_flash'))
             $console->writeln("Lazy Routing: ".$e->getMessage().". May be $controller in not in main controller folder. \n");
+        $issue = true;
         return;
     }
 
@@ -33,6 +34,7 @@ function generateRoutes  ($controller)
     {
         if(config('lazy_config.error_flash'))
             $console->writeln("Lazy Routing: const LAZY_CONFIG or url_path value not found in $controller. Lazy Routing will not work in the $controller.\n");
+        $issue = true;
         return;
     }
 
@@ -100,7 +102,7 @@ function generateRoutes  ($controller)
 
     });
 
-    if(config('lazy_config.error_flash'))
+    if(config('lazy_config.error_flash')&&$issue)
         $console->writeln("Lazy Routing: You can disable the error flash in config/lazy_config.php. \n");
 }
 
