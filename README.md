@@ -24,8 +24,10 @@ class  TestController  extends  Controller
 }
 ````
 
-- Here **url_path** is the route path prefix for this controller class. Like, in this example, the route will be created is  
+- Here **url_path** is the route path prefix for this controller class. Like, in this example, the route will be created is
+
 -> www.domain.com/testy/path-one
+
 -> www.domain.com/testy/path-two
 
 - **route_generation** value is useful when you don't want to generate route for a specific controller. By default it is true and declaration of this variable is not mandatory.
@@ -41,7 +43,9 @@ public  function  getGreatUser($user)
 ````
 This method will generate a get route like (if "url_path" => "testy") 
 url: domain.com/testey/greate-user/Jhon 
+
 route name: testy.getGreatUser [format : url_path.method_full_name]
+
 Result -> Hello Jhon
 
 ### Post Method
@@ -53,6 +57,7 @@ public  function  postSaveUser(Request $request )
 }
 ````
 url: domain.com/testey/save-user
+
 route name: testy.postSaveUser
 #### If you don't put get or post in front of your method name route will not be generated for that method.
 
