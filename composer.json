@@ -9,6 +9,16 @@
             "email": "tonoysh@gmail.com"
         }
     ],
+    "keywords": [
+        "laravel",
+        "package",
+        "lazy",
+        "routing",
+        "route",
+        "auto",
+        "generation"
+    ],
+    "homepage": "https://github.com/TusharSahaTonoy/lazy-routing-laravel",
     "autoload": {
         "psr-4": {
             "Tushar\\LazyRouting\\": "src/"
