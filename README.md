@@ -42,6 +42,7 @@ public  function  getGreatUser($user)
 }
 ````
 This method will generate a get route like (if "url_path" => "testy") 
+
 url: domain.com/testey/greate-user/Jhon 
 
 route name: testy.getGreatUser [format : url_path.method_full_name]
