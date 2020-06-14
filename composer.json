@@ -1,6 +1,6 @@
 {
     "name": "tushar/lazy-routing",
-    "description": "The test pack",
+    "description": "This is a Laravel library package once install you don't need to declare a route for each method instead you follow a normal camel case convention to declare the method name and the route will auto declared for you.",
     "type": "library",
     "license": "MIT",
     "authors": [
